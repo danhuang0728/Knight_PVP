@@ -25,6 +25,13 @@ public class TreeMan_Controller : NetworkBehaviour
     private Vector2 targetPosition;
     private Vector2 moveInput;
     private Rigidbody2D rig2d;
+    [SerializeField]
+    private UIcontroller uiController;
+    public override void Spawned() {
+        if (Object.HasInputAuthority) { 
+            uiController = FindObjectOfType<UIcontroller>();
+        }
+    }
     public override void FixedUpdateNetwork()
     {
         if (!Object.HasStateAuthority)
@@ -106,6 +113,10 @@ public class TreeMan_Controller : NetworkBehaviour
         {
             // 例如：啟動跟隨攝影機
         }
+
+        if (uiController != null) {
+            uiController.SetHP(HP);
+        }
         AniController();
         
     }
@@ -143,6 +154,7 @@ public class TreeMan_Controller : NetworkBehaviour
         dashing = true;
     }
     void Attack_Skill1() { 
+        Skill1Ready = false;
         //取得範圍內的玩家
         Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, attackRange);
         foreach (Collider2D collider in colliders)

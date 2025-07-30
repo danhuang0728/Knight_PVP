@@ -1,0 +1,536 @@
+fileFormatVersion: 2
+guid: 8ff8702afd548294c8f5ffc4690944dc
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: lazer_yellow_SpriteSheet_0
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 1868
+        width: 136
+        height: 180
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73be0331cccbe3b4497f4e10ef86e8e4
+      internalID: -583946243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lazer_yellow_SpriteSheet_1
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 1669
+        width: 113
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b6ad9c6195f24b4e84fae31d4883b23
+      internalID: 2135656589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lazer_yellow_SpriteSheet_4
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 1024
+        width: 110
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dc8e6839398f2f419e89c5c50084f2f
+      internalID: 343934212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lazer_yellow_SpriteSheet_5
+      rect:
+        serializedVersion: 2
+        x: 699
+        y: 1024
+        width: 145
+        height: 512
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51b5a7448b30f2f4f85e5d6bd0d502a0
+      internalID: -1744460961
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lazer_yellow_SpriteSheet_6
+      rect:
+        serializedVersion: 2
+        x: 194
+        y: 514
+        width: 122
+        height: 507
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce236edba2b81794689fe1d1738f8033
+      internalID: -1652038065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lazer_yellow_SpriteSheet_7
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 515
+        width: 128
+        height: 490
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b43491dc976ac04fac4e7f8863ecad7
+      internalID: 689386568
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lazer_yellow_SpriteSheet_2
+      rect:
+        serializedVersion: 2
+        x: 1201
+        y: 1550
+        width: 158
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16f8c8c867de6d84bbf18491a0f49a53
+      internalID: 1895270942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lazer_yellow_SpriteSheet_58
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 1024
+        width: 116
+        height: 517
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92384cd109271554da4c952426a1c924
+      internalID: 1226944542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lazer_yellow_SpriteSheet_3
+      rect:
+        serializedVersion: 2
+        x: 1739
+        y: 1550
+        width: 114
+        height: 498
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b5939689b6c70f4eae7a9ba83f1f866
+      internalID: -395917485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lazer_yellow_SpriteSheet_59
+      rect:
+        serializedVersion: 2
+        x: 1747
+        y: 1024
+        width: 95
+        height: 519
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f6ea256bc568f743b62e8adb7c3e1f5
+      internalID: 1578461007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lazer_yellow_SpriteSheet_8
+      rect:
+        serializedVersion: 2
+        x: 1217
+        y: 519
+        width: 124
+        height: 434
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c74a9c8c7f6e3845af5a09403fdecca
+      internalID: 4962525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lazer_yellow_SpriteSheet_9
+      rect:
+        serializedVersion: 2
+        x: 1736
+        y: 534
+        width: 109
+        height: 400
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87ae4f3cc6ddf4c4d804b81dca1b37c3
+      internalID: 682873721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lazer_yellow_SpriteSheet_10
+      rect:
+        serializedVersion: 2
+        x: 219
+        y: 41
+        width: 75
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37c93bc5b118dbe41baa022695695c29
+      internalID: -1570966192
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lazer_yellow_SpriteSheet_11
+      rect:
+        serializedVersion: 2
+        x: 734
+        y: 32
+        width: 74
+        height: 318
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f051b353c581f4087e40a02cb6df1b
+      internalID: 435502498
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lazer_yellow_SpriteSheet_12
+      rect:
+        serializedVersion: 2
+        x: 1248
+        y: 19
+        width: 70
+        height: 320
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb56d3bafc926c14fbe8497b2a6b5477
+      internalID: 2029730465
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: lazer_yellow_SpriteSheet_13
+      rect:
+        serializedVersion: 2
+        x: 1759
+        y: 6
+        width: 73
+        height: 321
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50eb6156956d03d43924d07830cc050a
+      internalID: 1164887724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      lazer_yellow_SpriteSheet_0: -583946243
+      lazer_yellow_SpriteSheet_1: 2135656589
+      lazer_yellow_SpriteSheet_10: -1570966192
+      lazer_yellow_SpriteSheet_11: 435502498
+      lazer_yellow_SpriteSheet_12: 2029730465
+      lazer_yellow_SpriteSheet_13: 1164887724
+      lazer_yellow_SpriteSheet_14: -1243495016
+      lazer_yellow_SpriteSheet_15: -1692581973
+      lazer_yellow_SpriteSheet_16: 1121779996
+      lazer_yellow_SpriteSheet_17: 1277568816
+      lazer_yellow_SpriteSheet_18: 1359590522
+      lazer_yellow_SpriteSheet_19: -236068973
+      lazer_yellow_SpriteSheet_2: 1895270942
+      lazer_yellow_SpriteSheet_20: -2127953659
+      lazer_yellow_SpriteSheet_21: 1333413297
+      lazer_yellow_SpriteSheet_22: 1342323514
+      lazer_yellow_SpriteSheet_23: 324562260
+      lazer_yellow_SpriteSheet_24: 1265478015
+      lazer_yellow_SpriteSheet_25: -1230719912
+      lazer_yellow_SpriteSheet_26: 1968964764
+      lazer_yellow_SpriteSheet_27: -993741406
+      lazer_yellow_SpriteSheet_28: 2003014391
+      lazer_yellow_SpriteSheet_29: 116991668
+      lazer_yellow_SpriteSheet_3: -395917485
+      lazer_yellow_SpriteSheet_30: 1753895185
+      lazer_yellow_SpriteSheet_31: -955841239
+      lazer_yellow_SpriteSheet_32: 1157823980
+      lazer_yellow_SpriteSheet_33: 589744953
+      lazer_yellow_SpriteSheet_34: 17871361
+      lazer_yellow_SpriteSheet_35: 1503687846
+      lazer_yellow_SpriteSheet_36: -1442895583
+      lazer_yellow_SpriteSheet_37: -1624461027
+      lazer_yellow_SpriteSheet_38: -429020241
+      lazer_yellow_SpriteSheet_39: -527256805
+      lazer_yellow_SpriteSheet_4: 343934212
+      lazer_yellow_SpriteSheet_40: 1068989304
+      lazer_yellow_SpriteSheet_41: -2059538023
+      lazer_yellow_SpriteSheet_42: 692377343
+      lazer_yellow_SpriteSheet_43: 227706004
+      lazer_yellow_SpriteSheet_44: -1922626593
+      lazer_yellow_SpriteSheet_45: 796043912
+      lazer_yellow_SpriteSheet_46: 92581891
+      lazer_yellow_SpriteSheet_47: -556559093
+      lazer_yellow_SpriteSheet_48: 1562272154
+      lazer_yellow_SpriteSheet_49: -531788284
+      lazer_yellow_SpriteSheet_5: -1744460961
+      lazer_yellow_SpriteSheet_50: -1627166614
+      lazer_yellow_SpriteSheet_51: 266197091
+      lazer_yellow_SpriteSheet_52: 141691381
+      lazer_yellow_SpriteSheet_53: 1102160714
+      lazer_yellow_SpriteSheet_54: 1157963030
+      lazer_yellow_SpriteSheet_55: 1040871195
+      lazer_yellow_SpriteSheet_56: 1361087683
+      lazer_yellow_SpriteSheet_57: 1316748695
+      lazer_yellow_SpriteSheet_58: 1226944542
+      lazer_yellow_SpriteSheet_59: 1578461007
+      lazer_yellow_SpriteSheet_6: -1652038065
+      lazer_yellow_SpriteSheet_7: 689386568
+      lazer_yellow_SpriteSheet_8: 4962525
+      lazer_yellow_SpriteSheet_9: 682873721
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

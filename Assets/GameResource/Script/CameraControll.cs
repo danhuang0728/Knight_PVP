@@ -2,11 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.InputSystem;
 
 public class CameraControll : MonoBehaviour
 {
     [Header("鏡像設定")]
-    [SerializeField] private Transform target;
+    [SerializeField] public Transform target;
     [SerializeField] private float smoothSpeed = 0.125f;
     [SerializeField] private Vector3 offset = new Vector3(0, 0, -10);
     
@@ -65,5 +66,8 @@ public class CameraControll : MonoBehaviour
         {
             shakeAmount = amount.Value;
         }
+    }
+    public void SetTarget(Transform target) { 
+        this.target = target;
     }
 }

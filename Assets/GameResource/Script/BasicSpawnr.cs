@@ -9,7 +9,10 @@ using UnityEngine.InputSystem;
 
 public class BasicSpawnr : MonoBehaviour, INetworkRunnerCallbacks
 {
+    // 新增這個靜態引用以便全局訪問
+    public static BasicSpawnr Instance { get; private set; }
     private Dictionary<PlayerRef, NetworkObject> playerList = new Dictionary<PlayerRef, NetworkObject>();
+    private Dictionary<PlayerRef, NetworkObject> hpBarList = new Dictionary<PlayerRef, NetworkObject>();
     
     [SerializeField]private PlayerInputHandler playerInputHandler;
     private NetworkSceneManagerDefault sceneManager;
@@ -21,10 +24,12 @@ public class BasicSpawnr : MonoBehaviour, INetworkRunnerCallbacks
     }
     [SerializeField]private NetworkRunner runner = null;
     public NetworkPrefabRef PlayerObject;
+    public NetworkPrefabRef HPbarPrefab;
 
     async void StartGame(GameMode mode)
     {
         runner.ProvideInput = true;
+        runner.AddCallbacks(this);
 
         await runner.StartGame(new StartGameArgs()
         {
@@ -40,7 +45,16 @@ public class BasicSpawnr : MonoBehaviour, INetworkRunnerCallbacks
         { 
             NetworkObject networkPlayerObject = runner.Spawn(PlayerObject, Vector3.zero, Quaternion.identity, player);
             playerList.Add(player, networkPlayerObject);
+            NetworkObject networkHpBarObject = runner.Spawn(HPbarPrefab, Vector3.zero, Quaternion.identity, null);
+            hpBarList.Add(player, networkHpBarObject);
+
+            //註冊進自訂的網路設定管理
+            NetworkManager.Instance.AddPlayer(player, networkPlayerObject,networkHpBarObject);
+            // 设置 HP Bar 的目标玩家 (这会自动同步到所有客户端)
+            var hpBarController = networkHpBarObject.GetComponent<HpBarController>();
+            hpBarController.TargetPlayerRef = player;
         }
+    
     }
 
     public void OnPlayerLeft(NetworkRunner runner, PlayerRef player)
@@ -50,6 +64,11 @@ public class BasicSpawnr : MonoBehaviour, INetworkRunnerCallbacks
             runner.Despawn(networkPlayerObject);
             playerList.Remove(player);
         }
+        if(hpBarList.TryGetValue(player, out NetworkObject networkHpBarObject))
+            {
+                runner.Despawn(networkHpBarObject);
+                hpBarList.Remove(player);
+            }
     }
     public void OnInput(NetworkRunner runner, NetworkInput input)
     {
@@ -57,6 +76,7 @@ public class BasicSpawnr : MonoBehaviour, INetworkRunnerCallbacks
         data = playerInputHandler.GetNetworkInput();
         input.Set(data);
     }
+
     public void OnConnectedToServer(NetworkRunner runner)
     {
         

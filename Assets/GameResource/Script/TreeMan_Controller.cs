@@ -7,25 +7,31 @@ using Unity.VisualScripting;
 
 public class TreeMan_Controller : NetworkBehaviour
 {
-    public SpriteRenderer spriteRenderer;
-    public Animator animator;
+    private SpriteRenderer spriteRenderer;
+    private Animator animator;
     //基本數值
     [Networked]public float HP { get; set; }
+    [Range(0, 1)]
+    public float BarValue = 1;
     public float speed = 7f;
     public float attackRange;
     public GameObject ClientCamera;
+    public GameObject HPbarPrefab;
     [Networked]public NetworkBool Ismove { get; set; } //host端判斷用
     [Networked]public NetworkBool Isflip { get; set; } //host端判斷用
     public float dashCooldown = 3f;
+    private float Skill1Cooldown = 1f;
     private bool dashing = false;
     private bool dashReady = true;
     [Networked]public NetworkBool Skill1Ready { get; set; }
-    private float dashCooldownTimer;
-    private float Skill1CooldownTimer;
+    public GameObject Skill1Effect;
+    private float dashCooldownTimer ;
+    private float Skill1CooldownTimer ;
     private Vector2 targetPosition;
     private Vector2 moveInput;
     private Rigidbody2D rig2d;
-    [SerializeField]
+    [SerializeField]private CameraControll cameraControll;
+
     private UIcontroller uiController;
     public override void Spawned() {
         if (Object.HasInputAuthority) { 
@@ -41,8 +47,9 @@ public class TreeMan_Controller : NetworkBehaviour
         {
             if(!dashing)
             {
-                moveInput = data.moveInput_NetworkData;
-                transform.Translate(moveInput * speed * Runner.DeltaTime);
+                moveInput = data.moveInput_NetworkData.normalized;
+                targetPosition = transform.position + (Vector3)(Runner.DeltaTime * speed * moveInput);
+                transform.position = Vector2.Lerp(transform.position, targetPosition, 0.3f);
             }
 
             //dash事件觸發
@@ -57,7 +64,9 @@ public class TreeMan_Controller : NetworkBehaviour
             {
                 if (Skill1Ready) { 
                     Debug.Log(data.playerEvent);
+                    RPC_TriggerShake();
                     Attack_Skill1();
+                    StartCoroutine(SpawnAndDestroyEffect());
                 }
             }
         }
@@ -83,7 +92,7 @@ public class TreeMan_Controller : NetworkBehaviour
         }
         //技能1冷卻計時器
         Skill1CooldownTimer += Runner.DeltaTime;
-        if (Skill1CooldownTimer >= dashCooldown)
+        if (Skill1CooldownTimer >= Skill1Cooldown)
         {
             Skill1Ready = true;
             Skill1CooldownTimer = 0f;
@@ -98,23 +107,19 @@ public class TreeMan_Controller : NetworkBehaviour
         {
             if (Object.HasStateAuthority) {
                 Camera.main.GetComponent<CameraControll>().SetTarget(transform);
+                cameraControll = Camera.main.GetComponent<CameraControll>();
             }
             else { 
-                GameObject camera  = Instantiate(ClientCamera);
-                camera.GetComponent<CameraControll>().SetTarget(transform);
+                cameraControll = Instantiate(ClientCamera).GetComponent<CameraControll>();
+                cameraControll.SetTarget(transform);
                 Camera.main.enabled = false;
             }
         }
     }
     private void Update()
     {
-        // 本地玩家才顯示 UI 或啟動攝影機等
-        if (Object != null && Object.HasInputAuthority)
+        if(Object.HasInputAuthority)
         {
-            // 例如：啟動跟隨攝影機
-        }
-
-        if (uiController != null) {
             uiController.SetHP(HP);
         }
         AniController();
@@ -165,16 +170,29 @@ public class TreeMan_Controller : NetworkBehaviour
                 //排除自己不造成傷害
                 if (player != null && player != this)
                 {
-                    player.TakeDamage(10f);
+                    player.RPC_TakeDamage(10f);
                 }
             }
         }
+    }
+    [Rpc(RpcSources.InputAuthority, RpcTargets.All)]
+    public void RPC_TriggerShake()
+    {
+        if (Object.HasInputAuthority) { 
+            cameraControll.TriggerShake();
+        }
+    }
+
+    IEnumerator SpawnAndDestroyEffect() { 
+        NetworkObject Skill1EffectObject = Runner.Spawn(Skill1Effect, this.transform.position, Quaternion.identity);
+        yield return new WaitForSeconds(0.5f);
+        Runner.Despawn(Skill1EffectObject);
     }
 
     ///<summary>
     ///扣血方法
     ///</summary>
-    public void TakeDamage(float damage) {
+    public void RPC_TakeDamage(float damage) {
         if (HP > 0) { 
             HP -= damage;
         }

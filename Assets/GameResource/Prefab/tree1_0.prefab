@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 5098690084178457024}
   - component: {fileID: 5346271319126945773}
   - component: {fileID: 5661177177392244920}
+  - component: {fileID: 2417358956332890832}
   m_Layer: 0
   m_Name: tree1_0
   m_TagString: Player
@@ -104,17 +105,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f65c6a3570c0de4497d68fd7bd877d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spriteRenderer: {fileID: 0}
-  animator: {fileID: 0}
   _HP: 100
-  speed: 7
-  attackRange: 5
+  BarValue: 0.9611
+  speed: 20
+  attackRange: 2.5
   ClientCamera: {fileID: 2793773686914332427, guid: 04c6e385792b10e43b1dafb1fcf61a86, type: 3}
+  HPbarPrefab: {fileID: 7520153924067866875, guid: 90619c60fd4f99d479189b214eb4beb2, type: 3}
   _Ismove:
     _value: 0
   _Isflip:
     _value: 0
   dashCooldown: 3
+  _Skill1Ready:
+    _value: 0
+  Skill1Effect: {fileID: 5689329562199326991, guid: 07b2e626edbb22a439ab832f8dcf6bc3, type: 3}
+  cameraControll: {fileID: 0}
 --- !u!95 &5403926509579530345
 Animator:
   serializedVersion: 5
@@ -166,7 +171,7 @@ MonoBehaviour:
   - {x: 0.15285614, y: -0.12660669, z: 0}
   m_ShapePathHash: -2018364654
   m_Mesh: {fileID: 0}
-  m_InstanceId: -2825658
+  m_InstanceId: 40874
   m_LocalBounds:
     m_Center: {x: -0.013572082, y: -0.017114155, z: 0}
     m_Extent: {x: 0.16642822, y: 0.11288572, z: 0}
@@ -263,6 +268,7 @@ MonoBehaviour:
   NetworkedBehaviours:
   - {fileID: 1464948100186267310}
   - {fileID: 5661177177392244920}
+  - {fileID: 2417358956332890832}
   ForceRemoteRenderTimeframe: 0
 --- !u!114 &5661177177392244920
 MonoBehaviour:
@@ -281,3 +287,21 @@ MonoBehaviour:
   SyncParent: 0
   _autoAOIOverride: 1
   DisableSharedModeInterpolation: 0
+--- !u!114 &2417358956332890832
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 660381751033670725}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 506319458, guid: e725a070cec140c4caffb81624c8c787, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Animator: {fileID: 5403926509579530345}
+  ApplyTiming: 2
+  SyncSettings: 79
+  StateHashes: 00000000364998ffb26a4e1061243ae7c460dd58
+  TriggerHashes: 00000000
+  TotalWords: 1

@@ -8,7 +8,7 @@ public class CameraControll : MonoBehaviour
 {
     [Header("鏡像設定")]
     [SerializeField] public Transform target;
-    [SerializeField] private float smoothSpeed = 0.125f;
+    [SerializeField] private float smoothSpeed = 0.03f;
     [SerializeField] private Vector3 offset = new Vector3(0, 0, -10);
     
     [Header("震動設定")]
@@ -17,6 +17,7 @@ public class CameraControll : MonoBehaviour
     [SerializeField] private float decreaseFactor = 1.0f; // 震動效果隨時間减弱的因子
     
     private Vector3 originalPos;
+    private TreeMan_Controller targetController;
     private float currentShakeDuration = 0f;
     
     void Start()
@@ -27,12 +28,11 @@ public class CameraControll : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //按下數字1測試震動
-        if (Input.GetKeyDown(KeyCode.Alpha1))
+        if(target != null && targetController == null)
         {
-            TriggerShake();
+            targetController = target.GetComponent<TreeMan_Controller>();
         }
-
+        
         if (target != null)
         {
             // 正常跟隨目標
